@@ -4,7 +4,7 @@ Free tools by Engr. Muhammad Saad Ayub. Pick a tool, download the file, and see 
 
 | Tool | What it does | Latest | Download |
 |---|---|---|---|
-| **My PC Buddy** | A little hiker who lives on your desktop: walks on the taskbar and your windows, reminds you of things (with snooze), and chats with you like a friend. <br>*Windows 10 (1903+) / 11, nothing to install* | 1.3.0 <br>2026-10-14 | [MyPCBuddy-1.3.0.zip](https://github.com/EngrMSaadAyub/Downloads/releases/download/my-pc-buddy-v1.3.0/MyPCBuddy-1.3.0.zip) <br>[What's new](https://github.com/EngrMSaadAyub/Downloads/releases/tag/my-pc-buddy-v1.3.0) |
+| **My PC Buddy** | A little hiker who lives on your desktop: walks on the taskbar and your windows, reminds you of things (with snooze), and chats with you like a friend. <br>*Windows 10 (1903+) / 11, nothing to install* | 1.4.0 <br>2026-10-14 | [MyPCBuddy-1.4.0.zip](https://github.com/EngrMSaadAyub/Downloads/releases/download/my-pc-buddy-v1.4.0/MyPCBuddy-1.4.0.zip) <br>[What's new](https://github.com/EngrMSaadAyub/Downloads/releases/tag/my-pc-buddy-v1.4.0) |
 
 Older versions: [all releases](https://github.com/EngrMSaadAyub/Downloads/releases). Each release is tagged `<tool>-v<version>`.
 
