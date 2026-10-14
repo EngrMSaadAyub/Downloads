@@ -1,0 +1,13 @@
+[
+    {
+        "id":  "my-pc-buddy",
+        "name":  "My PC Buddy",
+        "description":  "A little hiker who lives on your desktop: walks on the taskbar and your windows, reminds you of things (with snooze), and chats with you like a friend.",
+        "requirements":  "Windows 10 (1903+) / 11, nothing to install",
+        "version":  "1.3.0",
+        "date":  "2026-10-14",
+        "files":  [
+                      "MyPCBuddy-1.3.0.zip"
+                  ]
+    }
+]
