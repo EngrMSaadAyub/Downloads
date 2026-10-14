@@ -60,7 +60,8 @@ if (Succeeds { git rev-parse --abbrev-ref '@{u}' }) { Run { git pull --ff-only -
 
 # --- tools.json --------------------------------------------------------------------------------------------
 $tools = @()
-if (Test-Path tools.json) { $tools = @(Get-Content tools.json -Raw -Encoding UTF8 | ConvertFrom-Json) }
+# (Windows PowerShell hands a JSON array over as one object: the extra pipe step unrolls it.)
+if (Test-Path tools.json) { $tools = @(Get-Content tools.json -Raw -Encoding UTF8 | ConvertFrom-Json | ForEach-Object { $_ }) }
 $entry = $tools | Where-Object { $_.id -eq $Tool } | Select-Object -First 1
 if (-not $entry) {
     if (-not $Name -or -not $Description) { throw "'$Tool' is new: pass -Name and -Description the first time." }
