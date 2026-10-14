@@ -49,7 +49,7 @@ function Succeeds([scriptblock]$command) {
 
 if ($Tool -notmatch '^[a-z0-9]+(-[a-z0-9]+)*$') { throw "Tool id '$Tool' should be lowercase words joined by dashes, e.g. my-pc-buddy." }
 if ($Version -notmatch '^\d+(\.\d+){1,3}$') { throw "Version '$Version' should look like 1.3.0." }
-$files = foreach ($f in $File) { (Resolve-Path -LiteralPath $f).Path }
+$files = @(foreach ($f in $File) { (Resolve-Path -LiteralPath $f).Path }) # always an array (one file too)
 $tag = "$Tool-v$Version"
 
 $repo = gh repo view --json nameWithOwner -q .nameWithOwner
@@ -119,7 +119,7 @@ $lines.Add('`notes/<id>/<version>.md`, rebuilds this README, pushes, and creates
 
 # --- Commit, push, release -----------------------------------------------------------------------------------
 Run { git add tools.json README.md "notes/$Tool/$Version.md" } 'git add'
-Run { git commit --quiet -m "$($entry.name) $Version" } 'git commit'
+if (-not (Succeeds { git diff --cached --quiet })) { Run { git commit --quiet -m "$($entry.name) $Version" } 'git commit' } # a rerun after a failed release has nothing new
 Run { git push --quiet origin HEAD } 'git push'
 $head = git rev-parse HEAD
 Run { gh release create $tag @files --repo $repo --title "$($entry.name) $Version" --notes-file $notesPath --target $head } 'Creating the release'
