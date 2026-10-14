@@ -30,8 +30,22 @@ param(
     [string]$Description,                                 # one line (needed the first time)
     [string]$Requirements                                 # e.g. "Windows 10 1903+ / Windows 11" (optional)
 )
+# Cmdlet errors stop the script; native commands (git, gh) are checked by exit code instead, because Windows
+# PowerShell turns their redirected error output into terminating errors under 'Stop'.
 $ErrorActionPreference = 'Stop'
 Set-Location $PSScriptRoot
+
+function Run([scriptblock]$command, [string]$what) {
+    $ErrorActionPreference = 'Continue'
+    & $command
+    if ($LASTEXITCODE) { throw "$what failed (exit code $LASTEXITCODE)." }
+}
+
+function Succeeds([scriptblock]$command) {
+    $ErrorActionPreference = 'Continue'
+    & $command 2>&1 | Out-Null
+    return $LASTEXITCODE -eq 0
+}
 
 if ($Tool -notmatch '^[a-z0-9]+(-[a-z0-9]+)*$') { throw "Tool id '$Tool' should be lowercase words joined by dashes, e.g. my-pc-buddy." }
 if ($Version -notmatch '^\d+(\.\d+){1,3}$') { throw "Version '$Version' should look like 1.3.0." }
@@ -40,11 +54,9 @@ $tag = "$Tool-v$Version"
 
 $repo = gh repo view --json nameWithOwner -q .nameWithOwner
 if (-not $repo) { throw "Couldn't read this repository from GitHub (is gh signed in?)." }
-gh release view $tag --repo $repo *> $null
-if ($LASTEXITCODE -eq 0) { throw "Release $tag already exists." }
+if (Succeeds { gh release view $tag --repo $repo }) { throw "Release $tag already exists." }
 if (git status --porcelain) { throw "This repository has uncommitted changes; commit or discard them first." }
-git rev-parse --abbrev-ref '@{u}' *> $null
-if ($LASTEXITCODE -eq 0) { git pull --ff-only --quiet }
+if (Succeeds { git rev-parse --abbrev-ref '@{u}' }) { Run { git pull --ff-only --quiet } 'git pull' }
 
 # --- tools.json --------------------------------------------------------------------------------------------
 $tools = @()
@@ -106,8 +118,9 @@ $lines.Add('`notes/<id>/<version>.md`, rebuilds this README, pushes, and creates
 [IO.File]::WriteAllText((Join-Path $PSScriptRoot 'README.md'), ($lines -join "`n") + "`n", $utf8)
 
 # --- Commit, push, release -----------------------------------------------------------------------------------
-git add tools.json README.md "notes/$Tool/$Version.md"
-git commit --quiet -m "$($entry.name) $Version"
-git push --quiet origin HEAD
-gh release create $tag @files --repo $repo --title "$($entry.name) $Version" --notes-file $notesPath --target (git rev-parse HEAD)
+Run { git add tools.json README.md "notes/$Tool/$Version.md" } 'git add'
+Run { git commit --quiet -m "$($entry.name) $Version" } 'git commit'
+Run { git push --quiet origin HEAD } 'git push'
+$head = git rev-parse HEAD
+Run { gh release create $tag @files --repo $repo --title "$($entry.name) $Version" --notes-file $notesPath --target $head } 'Creating the release'
 Write-Host "Published: $base/releases/tag/$tag"
