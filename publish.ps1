@@ -91,7 +91,7 @@ foreach ($t in $tools) {
 $lines.Add('')
 $lines.Add("Older versions: [all releases]($base/releases). Each release is tagged ``<tool>-v<version>``.")
 $lines.Add('')
-$lines.Add('Windows may warn about an unknown app the first time you run one: choose **More info** → **Run anyway**.')
+$lines.Add('Windows may warn about an unknown app the first time you run one: choose **More info** then **Run anyway**.')
 $lines.Add('')
 $lines.Add('## Publishing (for me)')
 $lines.Add('')
