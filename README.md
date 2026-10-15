@@ -5,7 +5,7 @@ Free tools by Engr. Muhammad Saad Ayub. Pick a tool, download the file, and see 
 | Tool | What it does | Latest | Download |
 |---|---|---|---|
 | **My PC Buddy** | A little hiker who lives on your desktop: walks on the taskbar and your windows, reminds you of things (with snooze), chats with you like a friend, and lets you chat with your friends (on your phone too, with Pocket Buddy). <br>*Windows 10 (1903+) / 11, nothing to install* | 1.6.0 <br>2026-10-15 | [MyPCBuddy-1.6.0.zip](https://github.com/EngrMSaadAyub/Downloads/releases/download/my-pc-buddy-v1.6.0/MyPCBuddy-1.6.0.zip) <br>[What's new](https://github.com/EngrMSaadAyub/Downloads/releases/tag/my-pc-buddy-v1.6.0) |
-| **Pocket Buddy** | My PC Buddy's Friends chat on your phone: the same account and chats as your PC, notifications you can reply to, ticks, emoji and PIN sign-in. <br>*Android 8.0+; allow installing the .apk when asked* | 1.3.0 <br>2026-10-15 | [PocketBuddy-1.3.0.apk](https://github.com/EngrMSaadAyub/Downloads/releases/download/pocket-buddy-v1.3.0/PocketBuddy-1.3.0.apk) <br>[What's new](https://github.com/EngrMSaadAyub/Downloads/releases/tag/pocket-buddy-v1.3.0) |
+| **Pocket Buddy** | My PC Buddy's Friends chat on your phone: the same account and chats as your PC, notifications you can reply to, ticks, emoji and PIN sign-in. <br>*Android 8.0+; allow installing the .apk when asked* | 1.4.0 <br>2026-10-15 | [PocketBuddy-1.4.0.apk](https://github.com/EngrMSaadAyub/Downloads/releases/download/pocket-buddy-v1.4.0/PocketBuddy-1.4.0.apk) <br>[What's new](https://github.com/EngrMSaadAyub/Downloads/releases/tag/pocket-buddy-v1.4.0) |
 
 Older versions: [all releases](https://github.com/EngrMSaadAyub/Downloads/releases). Each release is tagged `<tool>-v<version>`.
 

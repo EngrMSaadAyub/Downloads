@@ -15,10 +15,10 @@
         "name":  "Pocket Buddy",
         "description":  "My PC Buddy\u0027s Friends chat on your phone: the same account and chats as your PC, notifications you can reply to, ticks, emoji and PIN sign-in.",
         "requirements":  "Android 8.0+; allow installing the .apk when asked",
-        "version":  "1.3.0",
+        "version":  "1.4.0",
         "date":  "2026-10-15",
         "files":  [
-                      "PocketBuddy-1.3.0.apk"
+                      "PocketBuddy-1.4.0.apk"
                   ]
     }
 ]
