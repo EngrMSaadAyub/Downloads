@@ -2,12 +2,12 @@
     {
         "id":  "my-pc-buddy",
         "name":  "My PC Buddy",
-        "description":  "A little hiker who lives on your desktop: walks on the taskbar and your windows, reminds you of things (with snooze), and chats with you like a friend.",
+        "description":  "A little hiker who lives on your desktop: walks on the taskbar and your windows, reminds you of things (with snooze), chats with you like a friend, and lets you chat with your friends (on your phone too, with Pocket Buddy).",
         "requirements":  "Windows 10 (1903+) / 11, nothing to install",
-        "version":  "1.4.0",
-        "date":  "2026-10-14",
+        "version":  "1.5.0",
+        "date":  "2026-10-15",
         "files":  [
-                      "MyPCBuddy-1.4.0.zip"
+                      "MyPCBuddy-1.5.0.zip"
                   ]
     }
 ]
