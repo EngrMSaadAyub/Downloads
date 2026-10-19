@@ -31,5 +31,17 @@
         "files":  [
                       "YT-Grabber-1.0.0.zip"
                   ]
+    },
+    {
+        "id":  "yt-grabber-android",
+        "name":  "YT Grabber for Android",
+        "description":  "Paste a YouTube link (or share it from the YouTube app) and download it in any quality (up to 4K) or as MP3, with pause and resume.",
+        "requirements":  "Android 8.0+; allow installing the .apk when asked. Older 32-bit phones: use the -armv7 file",
+        "version":  "1.0.0",
+        "date":  "2026-10-19",
+        "files":  [
+                      "YTGrabber-1.0.0.apk",
+                      "YTGrabber-1.0.0-armv7.apk"
+                  ]
     }
 ]
