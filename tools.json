@@ -20,5 +20,16 @@
         "files":  [
                       "PocketBuddy-1.4.0.apk"
                   ]
+    },
+    {
+        "id":  "yt-grabber",
+        "name":  "YT Grabber",
+        "description":  "Download YouTube videos in any quality (up to 4K) or as MP3, with an IDM-style download list (pause, resume, queue) and a Chrome/Edge button that sends the video you\u0027re watching.",
+        "requirements":  "Windows 10 / 11, nothing to install",
+        "version":  "1.0.0",
+        "date":  "2026-10-19",
+        "files":  [
+                      "YT-Grabber-1.0.0.zip"
+                  ]
     }
 ]
