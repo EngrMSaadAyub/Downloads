@@ -11,6 +11,17 @@
                   ]
     },
     {
+        "id":  "playdeck",
+        "name":  "PlayDeck",
+        "description":  "A VLC-style audio and video player: playlists you drag to reorder, background play with Bluetooth controls, a floating mini player, brightness/volume swipes, controls lock and subtitles.",
+        "requirements":  "Android 8.0+; allow installing the .apk when asked",
+        "version":  "1.0.0",
+        "date":  "2026-10-20",
+        "files":  [
+                      "PlayDeck-1.0.0.apk"
+                  ]
+    },
+    {
         "id":  "pocket-buddy",
         "name":  "Pocket Buddy",
         "description":  "My PC Buddy\u0027s Friends chat on your phone: the same account and chats as your PC, notifications you can reply to, ticks, emoji and PIN sign-in.",
